@@ -53,11 +53,7 @@ trait AppEngineDeploymentTrait
      */
     private static function getVersionId()
     {
-        $versionId = getenv('GOOGLE_VERSION_ID');
-        if ($versionId === false) {
-            self::fail('Please set GOOGLE_VERSION_ID env var.');
-        }
-        return $versionId;
+        return getenv('GOOGLE_VERSION_ID') ?: time() . rand();
     }
 
     /**
