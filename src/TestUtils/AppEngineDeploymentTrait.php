@@ -53,7 +53,7 @@ trait AppEngineDeploymentTrait
      */
     private static function getVersionId()
     {
-        return getenv('GOOGLE_VERSION_ID') ?: time() . rand();
+        return getenv('GOOGLE_VERSION_ID') ?: sprintf('test-%s', time());
     }
 
     /**
